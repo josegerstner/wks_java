@@ -1,0 +1,1173 @@
+﻿---------------------------------------------
+                CURSO DE JAVA
+---------------------------------------------
+    TIPOS DE DATOS
+	tipo                     almacenamiento   sufijo     rango
+Enteros
+	int:                        4 bytes                  desde -2.147.483.648 hasta 2.147.483.647
+	short(enteros):             2 bytes                  desde -32.768 hasta 32.767
+	long:                       8 bytes         L        mucho, sufijo L (se debe poner luego del número, por ejemplo "50000000000L")
+	byte:                       1 byte                   desde -128 hasta 127
+Punto Flotante (decimales)
+	float:                      4 bytes         F        aprox 6 a 7 cifras decimales significativas. Sufijo F
+	double:                     8 bytes                  aprox 15 cifras decimales significativas
+Caracteres
+	char:                       entre comillas simples siempre ('a', 'B', 'z')
+Lógicos
+	boolean:                    2 valores, True o False
+
+Tipos de datos comodines: int, double, char, boolean
+............................................................
+CONSTANTES: para inicializar una constante se debe poner delante de la sentencia la palabra "final", por ejemplo:
+			final int num = 5;
+...........................................................
+    OPERADORES
+ARITMETICOS
+	+ SUMA
+	- RESTA
+	* MULTIPLICACION
+	/ DIVISION
+LOGICOS, RELACIONALES Y BOOLEANOS
+	> MAYOR QUE
+	< MENOR QUE
+	<> MAYOR O MENOR QUE
+	!= DISTINTO QUE
+	== IGUAL QUE
+	&& Y LOGICO
+	|| O LOGICO
+INCREMENTO Y DECREMENTO
+	++ INCREMENTO
+	-- DECREMENTO
+	+= INCREMENTO Y ASIGNACION
+	-= DECREMENTO Y ASIGNACION
+CONCATENACION
+	+ CONCATENA
+...............................................................
+CLASE MATH
+	Math.sqrt(n); saca la raíz cuadrada de un número 'n'
+	Math.pow(base, exponente); potencia de un número. Base y exponente son doubles
+	Math.round(n); redondea un número 'n' decimal
+	Math.PI; es la constante PI
+...............................................................
+CLASE STRING
+	Los datos de tipo String deben ir entre comillas dobles ("mi_dato")
+	String mi_nombre = "Jose"; (mi_nombre es un objeto de la clase String)
+	mi_nombre.lenght(); devuelve la longitud del objeto (cantidad de caracteres)
+	mi_nombre.charAt(2); devuelve la posición de un caracter. En este caso la 's' está en la posición 2 ya que se empieza a contar desde 0 (cero).
+	mi_nombre.substring(X,Y);Siendo X el caracter a partir del cual se extrae e Y el nº de caracteres que se quieren extraer
+	mi_nombre.equals(cadena); devuelve True si son iguales y False si no lo son. Tiene en cuenta las mayúsculas y minúsculas
+	mi_nombre.equalsIgnoreCase(cadena); Igual que el anterior pero no tiene en cuenta las mayúsculas y minúsculas
+................................................................
+CLASE SCANNER
+	import java.util.Scanner;
+	Scanner t = new Scanner(); t es un objeto de la clase Scanner
+	t.nextLine(); Permite introducir texto
+	t.nextInt(); Permite introducir números enteros
+	t.nextDouble(); Permite introducir números decimales
+...............................................................
+CLASE JOPTIONPANE
+	import javax.swing.*;
+	JOptionPane.showInputDialog(); Crea una ventana para introducir datos
+.................................................................
+CONDICIONALES
+>	if(condicion verdadera){
+	}
+
+>	switch(condicion a evaluar){
+		case 1:
+			codigo a ejecutar;
+			break;
+		case 2:
+			codigo a ejecutar;
+			break;
+	}
+>	operador ternario (boolean ? V : F)
+	objeto.modificadores(elementoAEvaluar ? loQueHaceSiEsVerdadero : loQueHaceSiEsFalso)
+...................................................................
+BUCLES
+-Indeterminados:
+>	while(condicion){
+		Linea 1
+		linea 2
+		linea 3
+		-------
+		linea n
+	}
+
+>	do{
+		Linea 1
+		linea 2
+		linea 3
+		-------
+		linea n
+	}while(condicion);
+-Determinados:
+>	for(inicio bucle; condicion; contador bucle){
+		Linea 1
+		linea 2
+		linea 3
+		-------
+		linea n
+	}
+
+>	//for each o for mejorado
+	for(tipoDeDato nombreDeLaMatrizEjemplo: MatrizEnLaQueQuieroActuar){
+		Linea 1
+		linea 2
+		linea 3
+		-------
+		linea n
+	}
+un ejemplo del for mejorado sería:
+tengo un array del tipo "int" que se llama "ejemplo" y tiene "100" lugares
+	for(int otroNombre: ejemplo){
+		Linea 1
+		linea 2
+		linea 3
+		-------
+		linea n
+	}
+......................................................................
+ARRAYS/MATRICES/ARREGLOS
+Estructura de datos que contiene una colección de datos del mismo tipo
+Declaración: int[] mi_matriz = new int[5];
+Inicializar: mi_matriz[0] = 15; //Esto guarda el número 15 en la posición 0 (primera posición) de la matriz.
+   también se puede: int[] mi_matriz = {15, 25, 8, -7, 92} para inicializar toda la matriz
+........................................................................
+PROGRAMACIÓN ORIENTADA A OBJETOS
+	MODULARIZACIÓN: dividir el código de un programa en partes (clases)
+	ENCAPSULACIÓN: sólo se pueden modificar los datos/propiedades desde la misma clase.
+	CONTRUCTOR: en Java el método contructor de una clase ("Nombre_de_la_clase") se debe llamar igual ("Nombre_de_la_clase").
+	GETTER: public tipoDeDatoQueDevuelve nombreDelMetodo(){ codigo + return }
+	SETTER: public void nombreDelMetodo(){ codigo }
+.........................................................................
+FINAL
+CONSTANTES:
+	private final String nombre; 	//Estamos creando una variable del tipo String que se llama nombre, pero al poner la palabra "final" delante del tipo de dato.
+					//indica que su valor no podrá ser modificado luego del constructor(se transforma en una constante)
+CLASES:
+	final class Nombre{}		//Significa que la clase "Nombre" no puede tener subclases, nadie puede heredar de ella
+MÉTODOS:
+	public final tipoDeDato Nombre(){ } // Significa que si una subclase intenta modificar el método, no podrá hacerlo
+.......................................................................
+STATIC
+en variables o constantes:
+	la palabra "static" indica que esa variable o constante pertenece a la clase donde se define y no a un objeto de esa clase
+método static:
+	indica que el método no pertenece a un objeto de la clase sino a la clase en sí. Por ejemplo de la clase Math está Math.pow(1) o Math.sqrt(1) son métodos static
+.......................................................................
+HERENCIA
+	public class Furgoneta extends Coche{} //la palabra "extends" indica que la clase Furgoneta hereda de la "super clase" Coche todas sus características
+
+	Java no admite herencia múltiple
+
+	public Furgoneta{ super(); } //al crear un constructor, hay que llamar al constructor de la clase padre (en este caso no tiene parámetros, pero sino pasarlos tambien)
+
+	public double dameSueldo(){
+		double sueldoJefe=super.dameSueldo(); //con el super, le indico que haga lo que hace la clase padre
+		return sueldoJefe + incentivo;
+	}
+.......................................................................
+POLIMORFISMO
+	Se puede utilizar un objeto de una subclase donde se espera un objeto de la superclase (sustitución)
+ENLAZADO DINÁMICO
+	La máquina de JAva sabe a qué clase pertenece cada objeto
+..........................................................................
+CASTING DE OBJETOS
+	ClaseDelObjetoAlQueQuieroConvertir nombreDelObjeto = (ClaseDelObjetoAlQueQuieroConvertir) arrayDondeEstáAlojadoElObjeto[posición];
+....................................................................
+ABSTRACT
+MÉTODOS:
+	public abstract tipoDeDatoQueDevuelve nombreDelMétodo(); //No se utilizan llaves para definir un método abstracto
+CLASES:
+	abstract class NombreDeLaClase{ } //Si la clase tiene por lo menos un método abstracto, debe definirse como abstracta
+........................................................................
+MODIFICADORES DE ACCESO
+En la siguiente tabla podemos observar los comportamientos de los modificadores de acceso sobre variables o métodos.
+Según como sea inicializada la variable o método, se podrá acceder desde:
+	una clase del mismo paquete (CLASE)
+	el mismo paquete (PACKAGE)
+	una subclase de otro paquete que importa el paquete donde está la variable o método(SUBCLASE)
+	o de cualquier lado (TODOS)
+MODIFICADOR			CLASE	PACKAGE	SUBCLASE	TODOS
+PUBLIC:				  SI	  SI	  SI		  SI
+PROTECTED:	 		  si	  SI	  SI		  NO
+PRIVATE:			  si	  No	  No		  No
+POR DEFECTO(no poner nada):	  SI	  SI	  NO		  NO
+........................................................................
+TIPOS ENUMERADOS
+fuera de la clase se debe poner:
+	enum Nombre { }
+si quisiera hacerle un constructor:
+	enum Nombre{
+		EJEMPLO1("EJ1"), EJEMPLO2("EJ2");
+		private Nombre(tipoDeDato nombreDeVariable){
+			this.nombreDeVariable = nombreDeVariable;
+			}
+		private tipoDeDato nombreDeVariable;
+		}
+.............................................................................
+INTERFACES
+conjunto de directrices que deben cumplir las clases que la implementan (es como una clase abstracta)
+la diferencia con las clases abstractas sería que permite la herencia mútliple
+solo contienen:	Métodos abstractos y constantes
+A tener en cuenta:
+	Se almacenan en un fichero .class
+	No se pueden instanciar (no uso de new)
+	Todos los métodos son public y abstract (si no se ponen, se da por supuesto que lo son). No se implementan
+	No tienen variables. Si constantes
+para que una clase herede de una interfaz se utiliza la palabra "implements"
+	class NombreDeClase implements NombreDeInterface{ } //luego la clase debe sobreescribir los métodos abstractos de la interface
+.............................................................................
+INNER CLASS (clases internas)
+clase dentro de una clase:
+	public class Clase1{
+		class Clase2{
+			código Clase2;
+			}
+		código Clase1;
+	}
+Clase interna local:
+	class ClaseExterna{
+		public void método{
+			class ClaseInternaLocal{ //No debe llevar ningún modificador de acceso
+				código de la clase interna local;
+				}
+			código del método;
+			}
+		código de la clase externa;
+		}
+............................................................................
+JAVAX.SWING (INTERFACES DE USUARIO)
+
+JFrame:
+	nacen invisibles, se necesita el método setVisible();
+	nacen con tamaño inútil (0px x 0px), se requiere el método setSize();
+	conviene decir qué hace el programa cuando se cierra un frame
+Métodos importantes de JFrame:
+	setVisible(boolean hacerVisibile);//hace el marco visible
+	setSize(int anchoEnPixeles, int altoEnPixeles);//define la dimensión del marco
+	setLocation(x,y);//permite cambiar la ubicación del marco dentro del componente padre(la pantalla u otro marco fuera de este marco)
+	setBounds(x,y,ancho,largo);//permite cambiar la ubicación y el tamaño del marco
+	setIconImage(Image Image);//permite cambiar la imagen del marco (arriba a la izquierda)
+	setTitle(String Title);//permite cambiar el título del marco
+	setResizable(boolean resizable)//determina si se puede redimensionar el marco o no
+	setExtendedState(Frame.MAXIMIZED_BOTH);//define que el marco se abre a pantalla completa
+
+JPanel:
+	JPanel contruye láminas/capas donde se puede dibujar y escribir
+	debemos crear una clase que herede de JPanel
+Métodos importantes de JPanel:
+	paintComponent(Graphics g);
+	setBackground(Color);//pinta el fondo de una lámina/capa
+	setForeground(Color);//pinta los objetos (texto, figuras) que estén dentro del JPanel
+	
+JButton:
+	crea un botón dentro de una lámina/capa
+	JButton(String textoDelBoton)//constructor
+	
+JTextField:
+	crea un campo de texto de una sola línea dentro de una lámina/capa
+	JTextField()//constructor
+	JTextField(int columnas)//constructor
+	JTextField(String textoPredefinido)//constructor
+	JTextField(String textoPredefinido, int columnas)//constructor
+	JTextField(Document doc, String textoPredefinido, int columnas)//constructor
+	setText()//cambia o establece el texto
+	getText()//recibe lo que hay dentro del campo de texto
+JTextArea:
+	contruye un área de texto donde el usuario puede escribir
+	setText()//cambia o establece el texto dentro del área de texto
+	getText()//recibe lo que hay dentro del campo de texto
+	setLineWrap(boolean)//establece si el área de texto tiene saltos de línea o no
+	getLineWrap()//dice si un área de texto tiene áreas de texto o no
+	append(String texto)//agrega texto al final del documento
+
+JTextPane:
+	contruye un área de texto donde el usuario puede escribir
+
+JLabel:
+	construye una etiqueta en una lámina/capa
+	JLabel(String text)//constructor
+	JLabel(String text, int alineamientoHorizontal)//constructor
+
+JScrollPane
+	construye una lámina con barras de scroll que contiene a otra lámina (casi siempre texto)
+	JScrollPane(JTextArea areaDeTextoQueVaAContener);//Constructor
+
+JCheckBox
+	construye casillas checkbox
+	isSelected()//devuelve si la casilla está seleccionada
+	setSelected(boolean)//setea que la casilla esté seleccionada o no
+
+JRadioButton (ButtonGroup)
+	construye botones de radio
+	la clase ButtonGroup agrupa botones de radio
+		ButtonModel getSelection()	//devuelve el botón que está seleccionado
+
+ButtonModel (interfaz)
+	String getActionCommand()	//devuelve el string del botón seleccionado
+
+JComboBox (menú desplegable)
+	addItem(String)//agrega un String al combo
+	getSelectedItem()//devuelve el String seleccionado del combo en forma de objeto
+	setEditable(boolean)//permite editar el texto del combo para encontrar opciones que no estén en la lista
+	
+JSlider
+	setPaintTicks(boolean)//muestra las líneas
+	setMajorTickSpacing(int)//determina de cuánto en cuanto van las marcas mayores del JSlider
+	setMinorTickSpacing(int)//determina de cuánto en cuanto van las marcas menores del JSlider
+	setPaintLabels(boolean)//muestra los valores numéricos
+	setSnapToTicks(boolean)//Establece si se quiere o no imantar el cursor a las marcas
+	addChangeListener(ChangeListener)//pone a la escucha al JSlider de los cambios que haga con el cursor
+	
+JSpinner //cuadro de texto con botones
+	JSpinner()//constructor
+	JSpinner(SpinnerModel modelo)//constructor
+		//tipos de SpinnerModel:
+			SpinnerDateModel: especifica fechas
+			SpinnerListModel: especifica listas de texto
+			SpinnerNumberModel: especifica un tipo de número (decimal, acotado, etc)
+JMenuBar//Barra de menús  (contenedor de Archivo Editar Ver etc...)
+JMenu//(Archivo, Editar, Ver, etc son JMenu)
+JMenuItem//opciones de cada JMenu
+JCheckBoxMenuItem//construye junto al menú correspondiente una casilla cuadrada
+JRadioButtonMenuItem//construye junto al menú correspondiente una casilla redonda
+JPopupMenu//construye un menú emergente
+	setComponentPupUpMenu(Component e);
+JToolBar//construye unsa barra de herramientas
+
+BorderFactory//crea un borde alrededor de un componente
+	void createTitleBorder(Border tipoDeBorde, String título)	//método estático que crea un borde con un título
+	Border createEtchedBorder()	//método estático que devuelve un borde
+..........................................................................
+JAVA.AWT
+Toolkit:
+	Almacén de métodos que se comunican con el sistema huésped de ventanas
+Métodos importantes de Toolkit:
+	getDefaultToolkit();//obtiene los Toolkit de mi sistema
+	getScreenSize();//obtiene el tamaño de la pantalla
+	
+JAVA2D
+Shape
+	Rectangle2D		java.awt.geom
+	Ellipse2D		java.awt.geom
+	Line2D			java.awt.geom
+Graphics
+	Graphics2D:
+		draw(Shape s);//Dibuja el contorno de una figura pasada como parámetro, del tipo Shape (Rectangle2D, Ellipse2D, Line2D, etc...)
+		fill(Shape s);//Dibuja el interior de una figura
+		drawString(String texto, int anchoDondeEmpieza, int alturaDondeEmpieza);//Dibuja el texto ingresado en la dimensión especificada
+		drawImage(ImagenIO imagen, int x, int y, Observer unObjetoAcáPonemosNullNomás);//Dibuja una imagen en la lámina/capa
+		copyArea(int x, int y, int ancho, int alto, int distanciaX, int distanciaY);//copia un área de un objeto y la puedes poner en otro lado de la lámina
+		setPaint(Color);//setea el color del objeto Graphics2D
+		setFont(Fuente);//setea la fuente a utilizar en el objeto Graphics2D
+Color
+	Color(int red, int green, int blue);//Tiene distintos tipos de contructores, en este caso se ponen 3 int de 0-255
+	BLUE			//constante de clase para color
+	RED				//constante de clase para color
+	GREEN			//constante de clase para color
+	YELLOW			//constante de clase para color
+	etc...
+	.brighter()		//es un método utilizado para aplicar brillo al color
+	.darker()		//es un método utilizado para aplicar oscuridad al color
+Font
+	Font(String tipo, int estilo, int tamaño);//Tiene distintos tipos de contructores, en este caso se ponen 
+		BOLD		//constante de clase para estilo
+		PLAIN		//constante de clase para estilo
+		ITALIC		//constante de clase para estilo
+Image
+	getWidth();		//captura el ancho de la imagen
+	getHeigth();	//captura el alto de la imagen
+......................................................................
+JAVAX.IMAGEIO
+ImageIO
+	read(File miImagen);	//lee una imagen que esté en una carpeta del ordenador o en una url, instanciada anteriormente como File
+.........................................................................
+JAVA.IO
+File
+	File("ruta_de_la_imagen");//Tiene un constructor al que hay que indicarle la ruta o url de la imagen
+.........................................................................
+EVENTOS
+	Se define a un evento como "desencadenante de la acción", porque al ocurrir un evento pasa algo (una acción)
+Objeto Evento: ¿Qué desencadena la acción?
+Objeto Fuente: ¿Quién desencadena la acción?
+Objeto Listener: ¿Quién recibe la acción?
+
+EventObject
+	ActionEvent: java.awt.event
+	WindowEvent: java.awt.event
+		getNewState();//devuelve el estado actual de la ventana
+		getOldState();//devuelve el estado anterior de la ventana
+		getSource();//devuelve el origen del evento ocurrido
+	MouseEvent: java.awt.event
+		getModifiersEx();// devuelve el código del botón pulsado
+	
+Objeto Fuente
+	JButton
+		addActionListener(Objeto Listener)
+
+Objeto Listener
+	JPanel
+		implements ActionListener
+			actionPerformed(Objeto Evento)
+Eventos de ventana:
+		implements WindowListener
+			windowActivated(WindowEvent e);//cuando la ventana es activada
+			windowClosed(WindowEvent e);//cuando la ventana es cerrada(si finaliza el programa junto con el cierre de la ventana, no se ve)
+			windowClosing(WindowEvent e);//ventana cerrándose
+			windowDeactivated(WindowEvent e);//Ventana desactivada
+			windowDeiconified(WindowEvent e);//Ventana des-minimizada
+			windowIconified(WindowEvent e);//Ventana minimizada
+			windowOpened(WindowEvent e);//Ventana abierta
+		implements WindowStateListener
+			windowStateChanged(WindowEvent e);//Cambio de estado de ventana
+Eventos de teclado:
+		implements KeyListener
+			keyPressed(KeyEvent e); //cuando la tecla es presionada
+			keyReleased(KeyEvent e); //cuando la tecla es soltada
+			keyTyped(KeyEvent e); //cuando ocurrieron los eventos anteriores (keyPressed y keyReleased)
+Eventos de ratón:
+		implements MouseListener
+			mouseClicked(MouseEvent e);//ya fueron ejecutados los métodos mousePressed y mouseReleased
+			mouseEntered(MouseEvent e);//cuando el ratón entra en un objeto (botón por ejemplo)
+			mouseExited(MouseEvent e);//cuando el ratón sale de un objeto (botón por ejemplo)
+			mousePressed(MouseEvent e);//el ratón es pulsado
+			mouseReleased(MouseEvent e);//el ratón es soltado
+		implements MouseMotionListener
+			mouseDragged(MouseEvent e);//arrastro un objeto con el mouse
+			mouseMoved(MouseEvent e);//muevo el mouse
+Eventos de foco:
+		implements FocusListener
+			focusGained(FocusEvent e);
+			focusLost(FocusEvent e);
+		implements WindowFocusListener
+			windowGainedFocus(FocusEvent e);
+			windowLostFocus(FocusEvent e);
+	
+Múltiples fuentes de evento:
+		implements Action	//javax.swing
+			actionPerformed(ActionEvent e);
+			setEnable(boolean b);//Activa un objeto evento
+			isEnabed(boolean b);//pregunta si el objeto está activado
+			putValue(String clave, Object valor);
+			getValue(String clave);
+			addPropertyChangedListener(PropertyChangedListener oyente);
+			removePropertyChangedListener(PropertyChangedListener oyente);
+si quiero agregar funcionalidad de teclado:
+	Debo hacer:
+		1- crear mapa de entrada (donde va a tener el foco el evento)
+		2- crear combinación de teclas
+		3- asignar combinación de teclas a objeto
+		4- asignar objeto a acción
+		extends KeySDroke
+			static getKeyStroke(String s);
+		extends InputMap
+			put(KeyStroke, Object)
+		extends JPanel
+			getInputMap(int condición)
+		extends ActionMap
+			put(Object, acción)
+...................................................................
+CLASES ADAPTADORAS(para eventos)
+	WindowAdapter implementa las siguientes interfaces
+		WindowFocusListener
+		WindowStateListener
+		WindowListener
+		EventListener
+	KeyAdapter implementa las siguientes interfaces
+		KeyListener
+		EventListener
+	MouseAdapter implementa las siguientes interfaces
+		MouseListener
+		MouseMotionListener
+		MouseWheelListener
+		EventListener
+	FoucusAdapter
+		FocusListener
+		EventListener
+	AbstractAction implementa las siguientes interfaces//javax.swing
+		Action
+..................................................................
+LAYOUTS (DISPOSICIONES)
+java.awt.
+	GridLayout(grilla)
+		//Constructores
+		GridLayout()//crea una columna por componente en una única fila
+		GridLayout(int filas, int columnas)//se le indica las filas y columnas
+		GridLayout(int filas, int columnas, int espacioHorizontalEntreComponentes, int espacioVerticalEntreComponentes)
+	BorderLayout(divide la disposición en zonas)
+		//Constructores
+		BorderLayout()
+		BorderLayout(int espacioHorizontalEntreComponentes, int espacioVerticalEntreComponentes)
+		NT: add(new JButton("Rojo"), BorderLayout.EAST); //cuando se añade un componente, se le debe decir dónde va a ir ubicado
+	FlowLayout(la que viene por default, sin bordes ni nada)
+		//Constructores
+		FlowLayout()
+		FlowLayout(int alineación)
+		FlowLayout(int alineación, int espacioHorizontalEntreComponentes, int espacioVerticalEntreComponentes)
+	
+	Container
+		setLayout(TipoDeLayout nombreDeObjeto)//establece qué disposición tendrá el contenedor
+		pack();//se utiliza para indicar que la lámina tenga el tamaño correspondiente al contenido
+
+DISPOSICIONES AVANZADAS:
+	Box
+		createHorizontalBox();	//los elementos se van colocando horizontalmente
+		createVerticalBox();	//los elementos se van colocando verticalmente
+		createHorizontalStrut(int widht);	//define la distancia de los elementos
+		createVerticalStrut(int heigth);	//define la distancia de los elementos
+		createGlue();	//adapta la distancia máxima de los elementos en el caso de que se redimensione el contenedor
+
+	SpringLayout
+		putConstraint(String e1, Component c1, int pad, String e2, Component c2);//inserta el spring entre dos componentes (de derecha a izquierda)
+	Spring
+		static Spring constant(int a, int b, int c);	//define la elasticidad del Spring
+
+DISPOSICIONES LIBRES:
+	setLayout(null); //define la disposición libre
+	componente.setBounds(posEnX, posEnY, ancho, alto) //define la posición del componente dentro del layout
+		
+	LayoutManager //interfaz para crear layouts propios
+		addLayoutComponent(String nombre, Component componente)
+		removeLayoutComponent(Component componente)
+		minimumLayoutSize(Container padre)
+		layoutContainer(Container padre)
+		preferredLayoutSize(Container padre)
+	Container
+		getComponentCount()
+		getComponent(int i)
+.........................................................................
+VENTANAS EMERGENTES
+	JOptionPane: cuadros de diálogo
+		showInputDialog
+		showConfirmDialog
+		showMessageDialog
+		showOptionDialog
+	JFileChooser: Selección de ficheros
+	JColorChooser: Selector de color
+..........................................................................
+APPLETS (DISCONTINUADAS)
+	- Los applets son aplicaciones que se ejecutan en el navegador
+	- No llevan método "main", usan uno llamado "init"
+Jerarquía de herencia:
+	Object 
+		--> Component 
+			--> Container 
+				--> Window 
+					--> Frame
+						--> JFrame
+				--> Panel
+					--> Applet
+						--> JApplet
+
+Las Applets no tienen un método main, o mejor dicho no tienen EL método
+	public static void main(String args) 
+	sino:
+		public void init()
+
+No hace falta hacer visibles los JPanel ni el Applet ya que por defecto son visibles.
+Se puede usar JFrame para hacer marcos emergentes, sin embargo no se usan por defecto, estos son sustituidos por los JApplet.
+Los Applets se ejecutan en navegadores, por lo que se precisa un archivo.html con el código básico para mostrarlas.
+
+Para integrar el .class generado por el compilador de java en el .html se necesita de la etiqueta <applet></applet>
+Para indicar el .class utilizado, se utiliza el argumento code:
+	<applet code="Calculadora.class"></applet>
+Si se va a utilizar un archivo.jar, se debe indicar ese archivo con el argumento archive:
+	<applet code="Calculadora.class" archive="MiCalculadora.jar"></applet>
+..........................................................................
+ARCHIVOS
+java.io.File;
+	instanciar un objeto archivo:
+		File nombreDelObjeto = new File("ruta del archivo en la pc");
+	
+	preguntar si existe un archivo:
+		if(nombreDelObjeto.exists()){código}
+	
+	crear un archivo:
+		java.util.Formatter;
+		hay que instanciar un objeto de la clase Formatter
+		
+		try{
+		Formatter nombreDelObjeto = new Formatter("ruta donde se quiere crear el archivo");
+		}catch(Exception e){ loQueHaceSiNoSePuedeCrearElArchivo }
+...............................................................................
+Crear archivo JAR:
+	En Eclipse:
+		se va a archivo --> importar --> seleccionamos "jar file" etc etc
+
+.. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. .. ..
+Firmar un JAR
+
+	Hay que tener una firma digital (keytool):	(desde consola)
+		keytool -genkey -alias aliasQueVoyAUsar -validity 150 -v	(desde consola)
+//150 es la cantidad de días de validación del certificado, se puede poner la cantidad que uno quiera
+	 .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 
+	Firmamos la aplicación con nuestro certificado (jarsigner):
+		jarsigner Archivo.jar aliasQueVoyAUsar -verbose		(desde consola:)
+...............................................................................
+EXCEPCIONES:
+	Diferentes tipos de errores:
+		Error -->
+			Tiempo de compilación (sintaxis)
+			Tiempo de ejecución -->
+				Throwable -->
+					Error
+					Exception -->
+						IOException
+						RuntimeException
+
+IOException: 
+		Excepciones comprobadas (no es culpa del programador)
+		Me obliga a implementar una estuctura try-catch
+
+RuntimeException: 
+		Excepciones no comprobadas (es culpa del programador)
+		No me obliga a implementar una estuctura try-catch (podría salvarlas de otra forma)
+
+Estructura TRY-CATCH
+	try{
+		......
+		......
+	}catch(TipoDeExcepcion e){
+		......
+		......
+	}
+
+THROWS:
+	se utiliza para indicar a un método que puede lanzar una exception
+	en un método se pueden producir excepciones que se podrían salvar indicando su verificación de la siguiente manera:
+		public void pedirDatos throws IOException{
+			.......
+			.......
+		}
+		//se podría hacer así, pero es MALA PRÁCTICA
+
+THROW:
+	se utiliza para lanzar una excepcion manualmente
+	....
+	throw new Exception();
+	....
+
+CREAR EXCEPCIONES PROPIAS:
+	Hay que hacer una nueva clase que herede de Exception o alguna otra
+		class NuevaExcepcion extends Exception{
+			//conviene tener al menos DOS constructores
+			//uno sin parámetros y otro con un parámetro String que indique el error producido
+		}
+
+TIPS:
+	en el catch se puede pedir el tipo de excepción con el método printStackTrace(); //ejemplo e.printStackTrace();
+
+CAPTURAR VARIAS EXCEPCIONES:
+	se utiliza un try donde debe van a ocurrir las excepciones y luego varios catch:
+		try{
+			......
+		}catch(Exception1 e){
+			......
+		}catch(Exception2 e){
+			......
+		}
+	también se pueden informar los errores ocurridos con los siguientes métodos
+		e.getMessage()		//informa cuál fue el error
+		e.getClass().getName()	//informa el nombre de la clase de la excepción
+
+FINALLY:
+	es una sentencia que permite ejecutar el código aunque haya habido un error en el proceso
+		try{
+			.....
+		}catch(Exception e){
+			.....
+		}finally{
+			//este código se ejecutará siempre aunque haya una excepción
+			.....
+		}
+...............................................................................
+DEBBUG (eclipse)
+	Cuando un programa no tiene errores visibles pero no responde como estamos buscando, es necesario debbuguear:	
+	Lo primero que hay que hacer es establecer un punto de interrupción (pausa)
+
+	StepOver(F6) permite avanzar una línea en el debbug
+	StepInfo(F5) 
+	Resume(F8) salta al siguiente punto de interrupción
+...............................................................................
+CLASE INTERNA ANÓNIMA
+	es una clase interna porque está dentro de la clase donde la utilizamos
+	pero además es anónima porque no tiene nombre
+	por ejemplo:
+		JSpinner control = new JSpinner(new SpinnerNumberModel(5, 0, 10, 1){
+			public Object getNextValue(){
+				return super.getPreviousValue();
+			}
+			public Object getPreviousValue(){
+				return super.getNextValue();
+			}
+		});
+...............................................................................
+JAVA WEB START:
+	Hacer un archivo .XML con la extensión .JNLP(Java Network Launch Protocol) para el usuario
+	y para el servidor una aplicación.JNLP y otra JAR
+...............................................................................
+STREAMS (MANEJO DE DATOS/ARCHIVOS):
+java.io.*;
+
+Hay dos formas de guardar los datos:
+	Flujo de bytes (archivos binarios)
+		InputStream //clase abstracta secuencia de entrada
+			FileInputStream	//clase que hereda de InputStream
+				read()
+				close()
+		OutputStream //clase abstracta secuencia de salida
+			FileOutputStream //clase que hereda de OutputStream
+				write()
+				close()
+
+Flujo de caracteres (archivos de texto)
+	Reader //clase abstracta secuencia de entrada
+		FileReader(rutaDelArchivo)	//clase que hereda de Reader
+			read()	//método para leer caracter a caracter
+		BufferedReader(Reader archivoFileReader)	//clase que hereda de Reader
+		BufferedReader(Reader archivoFileReader, int tamañoDelBuffer)	//clase que hereda de Reader
+			readLine()	//método para leer línea a línea
+	Writer //clase abstracta secuencia de salida
+		FileWriter(rutaDelArchivo)	//clase que hereda de Writer
+		FileWriter(rutaDelArchivo, boolean)	//clase que hereda de Writer, el boolean indica si agrega información (true) o sobreescribe el fichero (false)
+...............................................................................
+SERIALIZACION:
+	Se trata de convertir un objeto en una sucesión de bytes para poder guardarlo en un disco y poder restaurarlo en el estado que estaba en el momento de la serialización
+		Serializable	//interfaz
+			ObjectOutputStream	//clase
+				writeObject()	//método
+			ObjectInputStream	//clase
+				readObject()	//método
+SerialVersionUID:
+	esta constante es generada por java al ejecutar el programa y sirve para controlar la versión del programa que se está utilizando. Para prevenir posibles problemas de emisor-receptor, se le puede indicar un valor para que no lo genere automáticamente de la siguiente manera:
+		private static final long serialVersionUID = 1L	//usamos 1 para indicar un número, podemos ponerle cualquiera
+...............................................................................
+MANEJO DE FICHEROS / ARCHIVOS Y DIRECTORIOS
+
+File	:clase para manipular archivos
+	String getAbsolutePath()	//devuelve la ruta absoluta de un archivo
+	String getPath()
+	String getCanonicalPath()
+	boolean exists()	//devuelve si existe un archivo
+	String[] list();	//devuelve la lista de archivos en tal directorio
+	boolean isDirectory()	//indica si es o no es un directorio
+	boolean mkdir()		//se utiliza para crear directorios
+
+File.separator:	es una constante de la clase File que se utiliza para universalizar las rutas que utilizamos
+	de esta manera tenemos compatibilidad para los distintos Sistemas Operativos donde utilicemos nuestro código
+	ejemplo:	File("workspace" + File.separator + "proyecto" + File.separator + "paquete");
+...............................................................................
+ARRAYLIST:
+	Crea listas dinámicas, por lo que no hace falta indicarle la longitud.
+	Las listas que crea en principio se reserva la memoria para 10 elementos, por lo que si sobrepasa este número es precavido indicar la capacidad que se utilizará desde un principio.
+	Pertenece al paquete java.util.
+	Su sintaxis sería: 
+		ArrayList<TipoDeDatoAAlmacenar>
+	Su inicialización:	//tiene 3 constructores
+		ArrayList<TipoDeDatoAAlmacenar> lista = ArrayList<TipoDeDatoAAlmacenar>();
+	Métodos útiles:
+		lista.add(new TipoDeDatoAAlmacenar())	//para añadir un objeto al arrayList
+		lista.size()	//devuelve un entero indicando la cantidad de elementos que contiene el arrayList
+		lista.ensureCapacity(n)	//donde n es la capacidad que deberá reservar el arrayList
+		lista.trimToSize()	//indica que el array llegará hasta ese tamaño para optimizar la memoria
+		lista.set(int posicion, TipoDeDatoAAlmacenar elementoAIncluir)	//incluye un elemento en una posición
+							determinada sobreescribiendo al elemento ubicado en esa posición
+		lista.get(int posicion)	//devuelve el elemento ubicado en esa posición
+
+		iterator()	//es un método que devuelve un objeto del tipo Iterator
+
+Iterator	//es una interfaz que se utiliza para recorrer los arrayList
+	boolean hasNext()	//indica si hay más elementos o no en la colección que estamos recorriendo
+	TipoDeObjetoQueRecorre next()	//devuelve el siguiente elemento de la colección
+	void remove()	//borra el elemento que estemos apuntando en ese momento
+...............................................................................
+PROGRAMACIÓN GENÉRICA:
+	Consiste en utilizar código que pueda ser reutilizado para distintos tipos de objeto
+	
+Ventajas:	- Código más sencillo
+		- Reutilización del código.
+		- Comprobación de errores en tiempo de compilación.
+
+Clases genéricas:
+	para definir una clase como genérica, se utilizan los símbolos '<' y '>' y como argumento la letra T, U o K
+	de la siguiente manera:
+		class ClaseGenerica <T>{
+		}
+Métodos genéricos:
+	para hacer un método generico() que sea estático en una clase Ejemplo se podría hacer de la siguiente manera:
+		//el TipoDeDatoADevolver es justamente eso, el tipo de dato que devuelve
+		//mientras que el <T> es el argumento de tipo para hacerlo genérico
+		class Ejemplo{
+			public static <T> TipoDeDatoADevolver(TipoDeParametro parametro){
+				return loQueTengaQueDevolver;
+			}
+		}
+Tipos comodín:
+	Si defino un método donde reciba por parámetro un objeto tipo Ejemplo, sólo me permite pasarle ese tipo de objeto.
+	Aunque intente pasarle un objeto perteneciente a una clase que herede de Ejemplo, me dará un error.
+	Para correjir el problema de la herencia, existen los tipo comodín. Se aplican de la siguiente manera:
+		en lugar de pasar por parámetro: 	<Ejemplo e>
+		se utiliza el tipo comodín: 		<? extends Ejemplo e>
+...............................................................................
+THREADS:
+	Los threads o hilos de ejecución se utilizan para hacer programación concurrente, que significa multiprogramación.
+	Para poder utilizarlos es necesario seguir los siguientes pasos:
+		1- Crear clase que implemente la interfaz Runnable (método run())
+		2- Escribir código de la tarea dentro del método run()
+		3- Instanciar la clase creada y almacenar la instancia en variable de tipo Runnable
+		4- Crear instancia de la clase Thread pasando como parámetro al contructor del Thread
+			el objeto Runnable anterior
+		5- Poner en marcha el hilo de ejecución con el método start() de la clase Thread
+
+	algunos métodos:
+		run()	//indica lo que tiene que hacer a la clase que implementa la interfaz Runnable
+		start()	//indica que se lanza un hilo de ejecución
+		sleep(int milisec)	//hace una pausa de tantos milisegundos le pasemos
+		getName()	//devuelve el nombre del Thread
+		join()	//este método permite que no se ejecute el siguiente hilo hasta que este muera
+	
+métodos de interrupción de un Thread:
+	void interrupt()
+	static boolean interrupted()
+	boolean isInterrupted()
+	stop()	//método obsoleto -NO SE DEBE UTILIZAR-
+
+Estados de los hilos:
+	Nuevo
+	Ejecutable
+	Bloqueado
+	Muerto
+
+SINCRONIZACIÓN DE THREADS:
+clase ReentrantLock	//se utiliza para bloquear código donde pueden acceder varios objetos a la vez y ocasionar errores
+	lock()	//bloquea el código
+	unlock()	//desbloquea el código
+	newCondition()	//este método devuelve un objeto del tipo Condition y sirve para dormir threads según una condición
+Condition	//interfaz que se utiliza para dormir o despertar los hilos según una condición
+	await()	//este método duerme el hilo hasta que le den signal
+	signalAll()	//este método despierta a todos los hilos a la espera indicando que hizo algo a ver si les sirve
+
+También se puede utilizar los métodos de la clase cósmica Object:
+	wait()
+	notifyAll()
+
+Otra forma más cómoda:
+	si un método tiene que ser sincronizado (no debe ser ejecutado por dos threads a la vez) se puede utilizar la palabra reservada synchronized en su declaración de la siguiente manera:
+	EJEMPLO SYNCHRONIZED:
+		public synchronized void metodo(){
+			..........
+			..........
+		}
+...............................................................................
+COLECCIONES:
+	Una colección es un almacén de objetos dinámicos
+
+	Ventajas de colecciones vs arrays
+	- pueden cambiar de tamaño dinámicamente
+	- pueden ir provistas de ordenamiento
+	- se pueden insertar y eliminar elementos
+	
+	Tipos de colecciones:
+			//son todas interfaces
+	Collection
+		--> List	//almacena elementos que pueden repetirse y se indexan con valores numéricos, 
+				//permite acceso aleatorio
+		--> Queue	//no permite acceso aleatorio, sólo permite acceder a elementos que estén al comienzo 
+				//o al final de la colección
+		--> Set		//almacena una colección de elementos no repetidos y sin ordenar
+			--> SortedSet
+	Map			//permite insertar elementos repetidos y se indexa con una clave única y su elemento
+		--> SortedMap
+
+List:
+	Ventajas:
+		- acceso aleatorio
+		- están ordenadas (collection.sort())
+		- añadir / eliminar sin restricción
+		- ListIterator modifica en cualquier dirección
+		- Sintaxis similiar a Arrays
+	Desventajas:
+		- bajo rendimiento en operaciones concretas que se resolverían mejor con otras interfaces
+	Clases:
+		ArrayList
+			- muy rápida accediendo a elementos
+			- se adapta a un gran número de escenarios
+		LinkedList
+			- listas enlazadas
+			- gran eficiencia agregando y eliminando elementos (no tanta leyendo elementos)
+		Vector
+			- considerada obsoleta
+			- utilizada únicamente en operaciones de concurrencia
+		CopyOnWriteArray
+			- utilizada en programas concurrentes
+			- eficiente en operaciones de lectura pero muy poco eficiente en operaciones de escritura
+Set:
+	Ventajas:
+		- no permiten elementos duplicados
+		- uso sencillo del método add() que asegura no tener elementos duplicados
+	Desventajas:
+		- No tienen acceso aleatorio
+		- poca eficiencia para ordenar elementos (no siempre se puede)
+	Clases:
+		HashSet
+			- rápida
+			- no duplicados
+			- no ordenación
+			- no acceso aleatorio
+		LinkedHashSet
+			- ordenación por entrada
+			- eficiente al acceder
+			- no eficiente al agregar
+		TreeSet
+			- es ordenado
+			- poco eficiente
+		EnumSet
+			- la mejor para tipos enumerados
+		CopyOnWriteArraySet
+			- específico concurrencia
+			- eficiente lectura
+			- poco eficiente para escritura
+			- poco eficiente al eliminar
+		ConcurrentSkipListSet
+			- específico concurrencia
+			- admite ordenación
+			- con muchos elementos no es eficiente
+Map:
+	Ventajas:
+		- Asociación clave->valor
+		- no claves iguales
+	Desventajas:
+		- poca eficiencia comparado con las demás colecciones
+	Clases:
+		HashMap
+			- no ordenación
+			- eficiente
+		LinkedHashMap
+			- ordenado por inserción
+			- permite ordenación por uso
+			- eficiente lectura
+			- poco eficiente escritura
+		TreeMap
+			- ordenado por clave
+			- poco eficiente en todas sus operaciones
+		EnumMap
+			- permite enum como clave
+			- muy eficiente
+		WeakHashMap
+			- utilizado para crear elementos que vaya borrando el sistema si no se usan
+			- muy poco eficiente
+		HashTable
+			- considerado obsoleto
+			- utilizado en operaciones de concurrencia
+		ConcurrentHashMap
+			- utilizado en concurrencia
+			- no permite nulos
+Queue:
+	Ventajas:
+		- muy rápido al acceder al primer y al último elemento
+		- permite crear colas de elementos (LIFO/FIFO)
+	Desventajas:
+		- acceso lento a los elementos intermedios
+	Clases:
+		ArrayDeque
+			- gran eficiencia
+			- la más utilizada
+		LinkedBlockingDeque
+			- utilizado en programación concurrente
+		LinkedList
+			- rendimiento inferior al ArrayDeque
+		ProrityQueue
+			- para utilizar un comparator
+			- el primer elemento dependerá de la propiedad elegida
+		PriorityBlockingQueue
+			- igual que el anterior pero más eficiente en programación concurrente
+
+métodos utilizados:
+	coleccion.add(objeto)	//agrega el objeto a la colección
+	obj.hashCode()		//devuelve la posición de la memoria donde se encuentra el objeto
+	obj1.equals(obj2)	//compara dos objetos
+	coleccion.iterator()	//devuelve un objeto de la interfaz Iterator
+	put(K,V)	//se utiliza en lugar de add en la interfaz Map para indicar la clave (K) y el valor (V)
+	get(Object key)	//devuelve la clave de un objeto Map
+	Set<Map.Entry<K,V> entrySet()	//devuelve una colección tipo Set que admite una clase Map.Entry<K,V> (se usa en Map)
+
+iteradores:
+	se utilizan para recorrer colecciones
+	Iterator<E>	//es una interfaz utilizada para recorrer colecciones
+		se inicializa: Iterator<ClaseDeColeccion> it = coleccion.iterator();
+		next()	//devuelve el próximo elemento de la colección
+			//lanza una excepción si no hay próximo elemento
+		hasNext()	//devuelve un boolean indicando si hay elemento siguiente o si no lo hay
+		remove()	//elimina el elemento actual
+
+	ListIterator<E>	//es una interfaz que tiene más métodos que el Iterator<E>
+		se inicializa: Iterator<ClaseDeColeccion> it = coleccion.listIterator();
+		removeAll(coleccion)	//se usa para borrar una colección dentro de otra colección
+
+Comparator<E>:
+	Esta interfaz se utiliza para pasarle por parámetro a una clase TreeSet para comparar a través del método compare.
+	int compare()	//se utiliza para comparar dos objetos según lo programado (parecido al compareTo de Comparable)
+
+Map.Entry
+	Es una interfaz interna de la interfaz Map
+	getKey()	//devuelve la clave del mapa
+	getValue()	//devuelve el valor correspondiente a la entrada
+...............................................................................
+SOCKETS:
+	se utilizan para hacer aplicaciones del tipo cliente servidor.
+	Serían el puente que une el cliente con el servidor
+	El socket contiene la dirección del servidor y el puerto de recepción
+
+Aplicación -----------------SOCKET------------------->	Aplicación
+Cliente							Servidor
+(OutputStream)						(InputStream)
+
+Socket 	//clase que envía mensajes
+	Socket(InetAddress ipDelServer, int puerto)	//se necesita la ip del servidor y el puerto que abre
+	getInetAddres()	//devuelve la dirección ip del objeto conectado al socket en forma de InetAddress
+
+ServerSocket		//pone el servidor a la escucha en el puerto que le indicamos
+	ServerSocket(int puerto)	//indicamos el puerto por el que vamos a trabajar
+	acept()		//este método devuelve un Socket que pone a la escucha al servidor
+
+DataOutputStream	//va a enviar el mansaje
+	DataOutputStream flujoSalida = new DataOutputStream(miSocket.getOutputStream());	//inicializamos
+	flujoSalida.writeUTF(campo1.getText());		//leemos lo que hay en el campo de texto
+	flujoSalida.close();			//debemos cerrar la conexión
+DataInputStream		//va a recibir el mensaje
+	DataInputStream flujoEntrada = new DataInputStream(miSocket.getInputStream());	//inicializo
+	String mensaje = flujoEntrada.readUTF();	//para leer lo que se recibió
+	//hacemos lo que queremos con el mensaje
+	flujoEntrada.close()	//se debe cerrar la conexión
+
+ObjectOutputStream
+ObjectInputStream
+
+InetAddress
+	getHostAddress()	//transforma la dirección ip a string
+...............................................................................
+BASE DE DATOS:
+	JDBC: Java Data Base Conectivity
+		Es un driver que conecta una aplicación Java con una base de datos (MySQL, SQL, etc)
+Clases a manejar:
+	java.sql
+	javax.sql
+	
+	DriverManager	(clase)
+	ResultSet	(Interface)
+	Connection	(Interface)
+	Statement	(Interface)
+	DataSource	(Interface)
+
+Proceso acceso a BBDD:
+	1- Establecer conexión con la BBDD
+	Objeto conexion:					//puede darnos una excepción
+		jdbc:mysql://localhost:9999/gestionPedidos	//mysql
+		jdbc:odbc:DSN_gestionPedidos			//sql server
+		jdbc:oracle:juan@servidor:9999:gestionPedidos	//oracle
+
+		driver:protocolo:detalles de la conexión
+
+	2- Crear un objeto Statement
+	Objeto statement:
+		conexion.createStatement()			//nos devuelve el objeto statement
+
+	3- Ejecutar sentencia SQL
+	Objeto resultset:
+		statement.executeQuery("Sentencia SQL")		//nos devuelve un objeto resultset (donde se almacena la información que consultamos en la BBDD)
+
+	4- Leer el Resulset(el resultset es una especie de tabla virtual en memoria)
+		resultset.getString()
+		resultset.next()
+
+CONECTAR A UNA BASE DE DATOS
+Connection:
+	Para conectar con la base de datos 'basedatos' necesitamos crear un objeto Connection de la siguiente manera
+		Connection miConexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/basedatos", "usuario", "password");
+
+	PD: el puerto por defecto es 3306 pero si lo cambiamos y no nos acordamos, podemos averiguarlo de la siguiente manera desde la consola:
+		> show variables where variable_name in('hostname','port');
+
+Statement:
+	Para crear un objeto Statement debemos utilizar el objeto Connection creado anteriormente:
+		Statement miStatement = miConexion.createStatement();
+
+ResultSet (ejecutar sentencia SQL):
+	Nuestro Statement tiene el método executeQuery que devuelve un objeto ResultSet y lo cramos así:
+		ResultSet miResultSet = miStatement.executeQuery("SELECT * FROM PRODUCTOS");
+
+Leer el ResultSet:
+	Para leer la consulta, debemos recorrer el ResultSet que es como una matriz donde se guarda la respuesta
+	a la consulta realizada anteriormente. Podemos realizarla con un while utilizando los siguientes métodos:
+		- next() // devuelve verdadero si hay un registro siguiente al que estamos posicionados
+		- getString("CAMPO") ó getInt("CAMPO") ó getDouble("CAMPO") ó habría que fijarse para fechas etc...
+			while(miResultSet.next()){
+				System.out.println(miResultSet.getString("CÓDIGO ARTÍCULO") + " " + miResultSet.getString("NOMBRE ARTÍCULO") + " " + miResultSet.getString("PRECIO"));
+			}
+
+INSERTAR REGISTROS EN UNA BASE DE DATOS
+	Para empezar debemos repetir el paso 1 y 2 de CONECTAR A UNA BASE DE DATOS para crear la conexión
+
+	Para realizar una operación que modifique la base de datos (en este caso insert/update/delete), debemos utilizar el método del Statement:
+		- executeUpdate(StringSQL)
+
+CONSULTAS PREPARADAS
+Ventajas
+	- Permiten pasar parámetros a las consultas SQL.
+	- Previenen ataques de inyección SQL.
+	- Tienen el mejor rendimiento (son sentencias precompiladas y reutilizables)
+Consulta Normal:
+	SELECT * FROM PRODUCTOS WHERE SECCIÓN='DEPORTES' AND PAÍSDEORIGEN='ESPAÑA'
+Consulta Preparada:
+	SELECT * FROM PRODUCTOS WHERE SECCIÓN=? AND PAÍSDEORIGEN=?
+	Los '?' son los parámetros que le pasamos.
+
+	 de la interfaz Conection tenemos el método:
+	 	prepareStatement(String sql)
+	 que nos devuelve un objeto de la interfaz:
+	 	PreparedStatement
+	 Esta interfaz tiene varios métodos, entre ellos:
+	 	setString(int númeroDeParámetro, String argumento)
+Uso:
+	//creamos un objeto de la interfaz PreparedStatement usando el objeto Connection
+	PreparedStatement sentencia = objetoConexion.prepareStatement(SELECT * FROM PRODUCTOS WHERE SECCIÓN=? AND PAÍSDEORIGEN=?);
+	//le pasamos los parámetros
+	sentencia.setString(1, 'DEPORTES');
+	sentencia.setString(2, 'ESPAÑA');
+	//ejecutamos la sentencia normalmente
+	ResultSet rs = sentencia.executeQuery();
+
+PROCEDIMIENTOS ALMACENADOS (Stored Procedures):
+Son eficaces y seguros
+	Para ejecutar un SP es necesario usar un objeto de la interface CallableStatement
+
+TRANSACCIONES:
+	Garantizan en una BBDD las características ACID:
+		- Atomicidad	(todo o nada)
+		- Consistencia	(integridad de datos)
+		- Aislamiento
+		- Durabilidad
+
+	En las transacciones se utilizan 3 métodos del objeto Connection:
+		- setAutoCommit()	//indica si las instrucciones SQL deben ser tratadas de forma individual, el default es true (en transacciones debe ser false)
+		- commit()			//intenta que se realicen las sentencias SQL
+		- rollBack()		//asegura la integridad de los datos, si falla algo revierte todo lo que se intentó hacer en la transacción
+...............................................................................
+MODELO VISTA CONTROLADOR
+	Es un patrón de arquitectura que separa la lógica del programa (datos/Modelo), 
+		de la interfaz del usuario (ventanas/Vista) y las comunicaciones (eventos/Controlador)
+	Ventajas:
+		- Modularización del programa
+		- Reutilización de código
+		- Mayor facilidad en el desarrollo
+		- Mayor facilidad del mantenimiento
+///////////////////////////
+ver esto:
+Patrones JDBC/DAO
+Patrón MVC
+Inyección de dependencia
+Uso de hilos y concurrencia
+Modelo de memoria de Java
+

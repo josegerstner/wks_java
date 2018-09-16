@@ -1,0 +1,33 @@
+crate table conductor(
+id int auto_increment,
+nombre varchar(255),
+licencia varchar(255),
+id_tipo_conductor int,
+id_vehiculo int,
+primary ket(id)
+);
+
+crate table tipo_conductor(
+id int auto_increment,
+nombre varchar(255),
+primary key(id)
+);
+
+create table contrato(
+id int auto_increment,
+id_vehiculo int,
+id_conductor int,
+primary key(id)
+);
+
+create table vehiculo(
+id int auto_increment,
+matricula verchar(255),
+marca verchar(255),
+modelo verchar(255),
+anio int,
+id_tipo_vehiculo int,
+primary key(id)
+);
+
+
