@@ -1082,6 +1082,12 @@ Proceso acceso a BBDD:
 		resultset.getString()
 		resultset.next()
 
+DESCARGAR DRIVER + Agregar al classpath
+	Descargamos desde el fabricante del motor de base de datos el Driver JDBC (en nuestro caso desde la página de MySQL).
+	Una vez descargado, lo agregamos al classpath del proyecto donde lo vamos a usar:
+		- Clic derecho -> propiedades -> Java Build Path -> Add External JAR
+		- Seleccionamos nuestro driver_JDBC.JAR y listo.
+
 CONECTAR A UNA BASE DE DATOS
 Connection:
 	Para conectar con la base de datos 'basedatos' necesitamos crear un objeto Connection de la siguiente manera
