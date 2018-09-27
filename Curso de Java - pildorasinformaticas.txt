@@ -1162,13 +1162,28 @@ TRANSACCIONES:
 		- rollBack()		//asegura la integridad de los datos, si falla algo revierte todo lo que se intentó hacer en la transacción
 ...............................................................................
 MODELO VISTA CONTROLADOR
-	Es un patrón de arquitectura que separa la lógica del programa (datos/Modelo), 
-		de la interfaz del usuario (ventanas/Vista) y las comunicaciones (eventos/Controlador)
+	Muy utilizado en aplicaciones cliente-servidor.
+	Es un patrón de arquitectura que separa 
+		la lógica del programa (datos/Modelo), 
+		de la interfaz del usuario (ventanas/Vista) 
+		y las comunicaciones (eventos/Controlador)
 	Ventajas:
 		- Modularización del programa
 		- Reutilización de código
 		- Mayor facilidad en el desarrollo
 		- Mayor facilidad del mantenimiento
+
+	Modelo: todo lo relacionado con los datos y su encapsulación.
+		(encapsular todos los datos referentes a la base de datos)
+	Vista: todo lo relacionado a la interfaz gráfica, como las ventanas.
+	Controlador: todo lo relacionado con la conexión del modelo con la vista y sus eventos.
+
+	Funcionamiento y flujo de datos:
+	La vista y el controlador están íntimamente ligados.
+	El usuario utiliza la aplicación mediante eventos.
+	El controlador se liga con el modelo mediante consultas o manipulación de datos.
+	La respuesta a esa consulta o manipulación, el modelo se lo da a la vista para que el usuario la pueda ver.
+
 ///////////////////////////
 ver esto:
 Patrones JDBC/DAO
