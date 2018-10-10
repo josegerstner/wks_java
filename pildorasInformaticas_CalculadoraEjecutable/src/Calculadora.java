@@ -125,7 +125,7 @@ class LaminaCalculadora extends JPanel{
 class LaminaInferior extends JPanel{
 	public LaminaInferior(){
 		URL rutaImagen = LaminaInferior.class.getResource("zapdos.png");
-		JButton miEtiqueta = new JButton("Pok√©Calculadora", new ImageIcon(rutaImagen));
+		JButton miEtiqueta = new JButton("PokÈCalculadora", new ImageIcon(rutaImagen));
 		add(miEtiqueta);
 	}
 }
